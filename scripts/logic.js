@@ -16,8 +16,7 @@ function generateReports(students) {
             name: student.name,
             average: average,
             grade: grade
-        };
-                 
+        }; 
     });
     };
 
