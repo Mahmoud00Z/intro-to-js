@@ -5,32 +5,31 @@ const students = [
 ];
 
 function generateReports(students) {
-    return students.map(student => {
-        const average = student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length;
-        const grade = average >= 90 ? 'A' :
+    return students.map(student => { // O(n) where n is the number of students
+        const average = student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length; // O(m) where m is the number of scores per student
+        const grade = average >= 90 ? 'A' : // O(1) 
                       average >= 80 ? 'B' :
                       average >= 70 ? 'C' :
                       average >= 60 ? 'D' :
                         'F';
-        return {
+        return { // O(1)
             name: student.name,
             average: average,
             grade: grade
         }; 
     });
-    };
+    }; // O(n*m) where n is the number of students and m is the number of scores per student, in this case O(3*3) = O(9)
 
 generateReports(students);
 
 class BankAccount {
     constructor(ownerName, initialBalance) {
         this.ownerName = ownerName;
-        this.balance = initialBalance;
-        
+        this.balance = initialBalance; // O(1)
     }
     deposit(amount) {
         this.balance += amount;
-        return this.balance;
+        return this.balance; // O(1)
     }
 
     withdraw(amount) {
@@ -39,7 +38,7 @@ class BankAccount {
             return this.balance;
         }
         this.balance -= amount;
-        return this.balance;
+        return this.balance; // O(1)
     }
 
     transferTo(account, amount) {
@@ -48,11 +47,11 @@ class BankAccount {
             return this.balance;
         }
         this.withdraw(amount);
-        account.deposit(amount);
-        return this.balance;
+        account.deposit(amount); 
+        return this.balance; // O(1) for the whole method
     }
     getSummary() {
-        return ` ${this.ownerName}'s Balance is ${this.balance}`;
+        return ` ${this.ownerName}'s balance is ${this.balance}`; // O(1)
     }
 };
     
