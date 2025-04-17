@@ -53,5 +53,6 @@ class BankAccount {
     getSummary() {
         return ` ${this.ownerName}'s balance is ${this.balance}`; // O(1)
     }
-}; // walla 3nde midterm bokra l khamis 17/4 ma adr a3ml l bonus <3 
+}; // walla 3nde midterm bokra l khamis 17/4 ma adr a3ml l bonus 🙃 
     
+
