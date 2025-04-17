@@ -1,3 +1,5 @@
+
+/*
 const students = [
     { name: "Alice", scores: [90, 85, 92] },
     { name: "Bob", scores: [70, 68, 72] },
@@ -55,4 +57,18 @@ class BankAccount {
     }
 }; // walla 3nde midterm bokra l khamis 17/4 ma adr a3ml l bonus 🙃 
     
+*/
+const task_input = document.querySelector(".task-input");
+const add_button = document.querySelector(".add-btn");
+const task_list = document.querySelector(".task-list");
 
+add_button.addEventListener("click", function() {
+    const task_text = task_input.value.trim();
+    if (task_text !== "") {
+        const  list_item = document.createElement("li");
+        list_item.textContent = task_text;
+        task_list.appendChild(list_item);
+        task_input.value = ""; 
+    }
+
+});
